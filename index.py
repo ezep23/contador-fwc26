@@ -1,6 +1,8 @@
-from flask import Flask, render_template, make_response, redirect, url_for
+# Importamos el paquete predeterminado de tiempo de python 
 from datetime import datetime, timedelta
 import time
+# Importamos el framework de Flask
+from flask import Flask, render_template, make_response, redirect, url_for
 
 app = Flask(__name__)
 
