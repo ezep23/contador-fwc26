@@ -1,6 +1,5 @@
 # Importamos el paquete predeterminado de tiempo de python 
-from datetime import datetime, timedelta
-import time
+from datetime import datetime, time, timedelta
 # Importamos el framework de Flask
 from flask import Flask, render_template, make_response, redirect, url_for
 
@@ -23,8 +22,16 @@ def index():
         return redirect(url_for('tiempo_completado'))
     else:
         tiempo_restante = fecha_objetivo - datetime.now()
-        tiempo_restante_segundos = int(tiempo_restante.total_seconds())
-        return render_template("index.html", tiempo_restante=tiempo_restante_segundos)
+
+        # Calcula años, meses, días, horas, minutos y segundos restantes
+        years = tiempo_restante.days // 365
+        months = tiempo_restante.days % 365 // 30
+        days = tiempo_restante.days % 365 % 30
+        hours = tiempo_restante.seconds // 3600
+        minutes = (tiempo_restante.seconds // 60) % 60
+        seconds = tiempo_restante.seconds % 60
+        
+        return render_template("index.html", years=years, months=months, days=days,hours=hours, minutes=minutes, seconds=seconds)
 
 #Endpoint para cuando se complete el tiempo
 @app.route('/completado')
