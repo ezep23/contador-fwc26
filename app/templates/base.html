@@ -4,26 +4,30 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Estilos css -->
-    <link rel="stylesheet" type="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <!-- CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/layout.css') }}">
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="{{ url_for('static', filename='images/fav.jpg') }}" type="image/x-icon">
     <title>
-        <!-- Bloque title -->
+        
         {% block title %} WC2026 {% endblock %}
+        
     </title>
 </head>
 <body>
     <header>
         <!-- Común -->
     </header>
-    <div>
+    <section>
         <!-- Bloque contenido default (Contador) -->
-        {% block content %}
+        {% block counter %}
             <h1>Contador</h1>
-            <p>Tiempo restante: {{ tiempo_restante }} segundos</p>
+            <p> {{ years }} - {{ months }} - {{ days }} - {{ hours }} - {{ minutes }} - {{ seconds }}</p>
         {% endblock %}
-    </div>
+    </section>
     <footer>
         <!-- Común -->
     </footer>
+    
 </body>
 </html>
