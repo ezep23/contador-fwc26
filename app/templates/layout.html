@@ -7,7 +7,7 @@
     <!-- CSS -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/layout.css') }}">
     <!-- Favicon -->
-    <link rel="shortcut icon" href="{{ url_for('static', filename='images/fav.jpg') }}" type="image/x-icon">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='images/fav.png') }}" type="image/x-icon">
     <title>
         
         {% block title %} WC2026 {% endblock %}
@@ -20,14 +20,24 @@
     </header>
     <section>
         <!-- Bloque contenido default (Contador) -->
-        {% block counter %}
+        {% block section %}
             <h1>Contador</h1>
             <p> {{ years }} - {{ months }} - {{ days }} - {{ hours }} - {{ minutes }} - {{ seconds }}</p>
         {% endblock %}
     </section>
     <footer>
-        <!-- Común -->
+        {% block footer %}
+        <div class="footer">
+            <div id="texto-autor">
+                <p>Creado por Ezequiel Pistone</p>
+            </div>
+            <div class="links">
+                <a>Instagram</a>
+                <a>Github</a>
+                <a>Youtube</a>
+            </div>
+        </div>
+        {% endblock %}
     </footer>
-    
 </body>
 </html>

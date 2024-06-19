@@ -1,5 +1,31 @@
-{% extends './base.html' %}
+{% extends './layout.html' %}
 
-{% block title %} Contador {% endblock %}
+{% block title %} ARGENTINA 2026 {% endblock %}
 
 {% block counter %} {% endblock %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <footer>
+        {% block footer %} 
+        <div class="footer">
+            <div id="texto-autor">
+                <p>Creado por asd</p>
+            </div>
+            <div class="links">
+                <a>Instagram</a>
+                <a>Github</a>
+                <a>Youtube</a>
+            </div>
+        </div> 
+        {% endblock %}
+    </footer>
+</body>
+</html>
