@@ -27,5 +27,17 @@
         </div> 
         {% endblock %}
     </footer>
+    <script>
+        function actualizarContador() {
+            fetch('/tiempo_restante')  // Hace una solicitud GET a la ruta '/tiempo_restante'
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('countdown').innerText = `${data.years} años, ${data.months} meses, ${data.days} días, ${data.hours} horas, ${data.minutes} minutos, ${data.seconds} segundos`;
+                });
+        }
+
+        actualizarContador();  // Actualiza el contador inmediatamente al cargar la página
+        setInterval(actualizarContador, 1000);  // Actualiza el contador cada segundo
+    </script>
 </body>
 </html>
