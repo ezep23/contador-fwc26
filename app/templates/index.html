@@ -1,48 +1,50 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contador Regresivo</title>
-    <!-- Estilos CSS opcionales -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <!-- JavaScript para actualizar el contador -->
-    <script>
-        function updateCountdown() {
-            // Fecha y hora objetivo en milisegundos
-            var fechaObjetivo = new Date("2026-07-11T14:30:00");
-            // Fecha y hora actual en milisegundos
-            var ahora = new Date();
-            // Diferencia en milisegundos
-            var diferencia = fechaObjetivo - ahora;
+{% include '/base.html' %}
 
-            if (diferencia <= 0) {
-                // Si ya pasó la fecha objetivo, redirecciona
-                window.location.replace("/completado");
-            } else {
-                // Calcular días, horas, minutos y segundos
-                var segundos = Math.floor(diferencia / 1000);
-                var minutos = Math.floor(segundos / 60);
-                var horas = Math.floor(minutos / 60);
-                var dias = Math.floor(horas / 24);
+{% block head %} 
+<script>
+    function updateCountdown() {
+        // Fecha y hora objetivo en milisegundos
+        var fechaObjetivo = new Date("2026-07-11T14:30:00");
+        // Fecha y hora actual en milisegundos
+        var ahora = new Date();
+        // Diferencia en milisegundos
+        var diferencia = fechaObjetivo - ahora;
 
-                horas %= 24;
-                minutos %= 60;
-                segundos %= 60;
+        if (diferencia <= 0) {
+            // Si ya pasó la fecha objetivo, redirecciona
+            window.location.replace("/completado");
+        } else {
+            // Calcular días, horas, minutos y segundos
+            var segundos = Math.floor(diferencia / 1000);
+            var minutos = Math.floor(segundos / 60);
+            var horas = Math.floor(minutos / 60);
+            var dias = Math.floor(horas / 24);
 
-                // Actualizar el elemento en la página
-                document.getElementById("contador").innerHTML = dias + " días " + horas + " horas " + minutos + " minutos " + segundos + " segundos";
-            }
+            horas %= 24;
+            minutos %= 60;
+            segundos %= 60;
+
+            // Actualizar el elemento en la página
+            document.getElementById("contador").innerHTML = dias + ' : ' + horas + ' : ' + minutos + ' : ' + segundos;
         }
+    }
 
-        // Actualizar cada segundo
-        setInterval(updateCountdown, 1000);
-    </script>
-</head>
-<body>
+    // Actualizar cada segundo
+    setInterval(updateCountdown, 10);
+</script>
+{% endblock %}
+
+{% block content %}
     <div class="container">
         <h1>Contador Regresivo</h1>
         <div id="contador"></div>
     </div>
-</body>
-</html>
+{% endblock %}
+
+
+
+
+
+
+
+

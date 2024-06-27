@@ -1,7 +1,5 @@
-{% extends './layout.html' %}
+{% include '/base.html' %}
 
-{% block title %} Error {% endblock %}
-
-{% block section %} <p> ¡Campeón..., parece que esa página no existe o ha ocurrido un error ! </p> {% endblock %}
-
-{% block footer %} {% endblock %}
+{% block content %} 
+    <p> ¡Campeón..., parece que esa página no existe o ha ocurrido un error ! </p> 
+{% endblock %}
