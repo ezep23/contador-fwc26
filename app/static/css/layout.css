@@ -6,28 +6,13 @@
 
 /* Footer */
 
-.footer{
-    display: block;
-    align-content: center;
-    background-color: #313131;
-    
-    
-    #texto-autor{
-        display: flex;
-        padding: 10px;
-            
-        & p{
-            color: grey;
-        }
-    }
-
-    .links{
-        display: flex;
-        flex-direction: row;
-        gap: 5px;
-
-        & a{
-            color: grey;
-        }
-    }   
+body {
+    background-image: url("../images/messi_copa_2022.webp");
+    background-size: 100%;
+    background-position: center;
+    height: 90vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
