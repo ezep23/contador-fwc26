@@ -14,7 +14,7 @@ Proximamente con el avance del subiré capturas del proyecto.
 1. Clonar el repositorio 
 2. Activar un entorno virtual 
 3. Ejecutar el comando "pip install -r .\requirements.txt" que instalará las versiones de las modulos requeridos.
-4. Proximamente
+4. Iniciar el codigo
 
     
 ## Contribución
