@@ -9,11 +9,6 @@ app = Flask(__name__)
 def verificar_fecha(fecha_objetivo):
     return datetime.now() >= fecha_objetivo
 
-# Endpoint de error 404
-@app.errorhandler(404)
-def not_found_endpoint(error):
-    return render_template('error.html', error=error)
-
 # Endpoint index con el contador regresivo
 @app.route('/')
 def index():
