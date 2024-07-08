@@ -6,7 +6,7 @@ Un pequeño proyecto utilizando un framework de Python llamado Flask el cual con
 ## Capturas
 Proximamente con el avance del subiré capturas del proyecto.
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![App Screenshot](./app/static/images/screen.png)
 
 
 ## Instalación
