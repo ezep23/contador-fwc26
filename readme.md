@@ -4,7 +4,7 @@ Un pequeño proyecto utilizando un framework de Python llamado Flask el cual con
 
 
 ## Capturas
-Proximamente con el avance del subiré capturas del proyecto.
+Proximamente con el avance subiré capturas del proyecto.
 
 ![App Screenshot](./app/static/images/screen.png)
 
